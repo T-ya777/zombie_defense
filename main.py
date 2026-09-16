@@ -1892,13 +1892,13 @@ def play_loadImage(app):
     app.gameoverWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/gameoverWord1.png'
     app.revivePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/revive.png'
     app.puzzleIcon = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzleIcon1.png'
-    app.bulletType = ['cmu://1073184/43603357/1.png',
-                      'cmu://1073184/43603386/2.png',
-                      'cmu://1073184/43603400/3.png',
-                      'cmu://1073184/43603416/4.png',
-                      'cmu://1073184/43603435/5.png',
-                      'cmu://1073184/43603445/6.png',
-                      'cmu://1073184/43603458/7.png']
+    app.bulletType = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/1.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/2.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/3.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/4.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/5.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/6.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/7.png']
 
 def play_redrawAll(app):
     playBGWidth, playBGHeight = getImageSize(app.playBackground)
