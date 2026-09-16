@@ -418,24 +418,24 @@ def drawRoundLine(start, end, height, r, fill, opacity):
 def start_onScreenActivate(app):
     app.title = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/title.png'
     app.startButton = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/startButton.png'
-    startImage = ['cmu://1073184/43573054/1.jpg',
-                    'cmu://1073184/43573522/3.jpg',
-                    'cmu://1073184/43573576/4.jpg',
-                    'cmu://1073184/43573592/5.jpg',
-                    'cmu://1073184/43573638/6.jpg',
-                    'cmu://1073184/43573678/7.jpg',
-                    'cmu://1073184/43573729/8.jpg',
-                    'cmu://1073184/43573792/9.jpg',
-                    'cmu://1073184/43573809/10.jpg',
-                    'cmu://1073184/43573842/11.jpg',
-                    'cmu://1073184/43573877/12.jpg',
-                    'cmu://1073184/43573910/13.jpg',
-                    'cmu://1073184/43573930/14.jpg',
-                    'cmu://1073184/43573955/15.jpg',
-                    'cmu://1073184/43573977/16.jpg',
-                    'cmu://1073184/43574008/17.jpg',
-                    'cmu://1073184/43574028/18.jpg',
-                    'cmu://1073184/43574046/19.jpg']
+    startImage = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/1.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/3.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/4.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/5.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/6.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/7.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/8.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/9.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/10.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/11.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/12.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/13.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/14.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/15.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/16.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/17.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/18.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/19.jpg']
     app.startURL = startImage + list(reversed(startImage))[1:-1]
     app.startIndex = 0
     app.stepsPerSecond = 10
