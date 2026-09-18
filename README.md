@@ -5,11 +5,11 @@ A Python tower defense game built as my final project for Carnegie Mellon's **15
 The project combines object-oriented game architecture, graph-search algorithms, computational geometry, and real-time interactive gameplay. Players defend a wall against increasingly difficult zombie waves, purchase upgrades, and earn rewards through pathfinding and draggable puzzle minigames.
 
 <p align="center">
+  <img src="demo/start_screen.gif" width="18%" />
   <img src="demo/puzzle.gif" width="18%" />
   <img src="demo/capture_zombie.gif" width="18%" />
   <img src="demo/game_end.gif" width="18%" />
   <img src="demo/game.gif" width="18%" />
-  <img src="demo/start_screen.gif" width="18%" />
 </p>
 
 
