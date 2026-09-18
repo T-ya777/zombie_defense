@@ -99,7 +99,7 @@ class PuzzlePiece:
         self.current = self.inventory
         self.collected = False
         self.correctPosition = False
-        baseURL = f'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzle{setID}'
+        baseURL = f'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/puzzle{setID}'
         self.url = f'{baseURL}/{ID}.png'
         self.offset = offset
         self.multiplier = 0.15
@@ -216,14 +216,14 @@ def onAppStart(app):
     app.rightArrow = [375, 310, 368, 330, 355, 323, 365, 310, 355, 297, 368, 290]
     app.leftArrow = [25, 310, 32, 330, 45, 323, 35, 310, 45, 297, 32, 290]
     
-    app.gemPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/gem1.png'
-    app.exitPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/exit.png'
-    app.borderPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/border.png'
-    app.enemyHead = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/enemyHead.png'
-    app.winPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/winPNG.png'
-    app.losePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/losePNG.png'
-    app.winWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/winWord.png'
-    app.loseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/loseWord.png'
+    app.gemPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/gem1.png'
+    app.exitPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/exit.png'
+    app.borderPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/border.png'
+    app.enemyHead = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/enemyHead.png'
+    app.winPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/winPNG.png'
+    app.losePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/losePNG.png'
+    app.winWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/winWord.png'
+    app.loseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/loseWord.png'
     app.shopList = [ShopItem('initBlood', 50, 100, range(150, 1001, 50)),
                     ShopItem('initSolider', 50, 1, list(range(2, 5))),
                     ShopItem('bombHurt', 50, 10, list(range(15, 101, 5))),
@@ -237,7 +237,7 @@ def onAppStart(app):
 def loadPuzzle(app):
     #offset help image match the polygon
     if app.currentPuzzleIndex == 0:
-        base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzle0'
+        base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/puzzle0'
         app.answer = f'{base}/6.png'
         piece0 = PuzzlePiece(0, 0,
             [(217, 171), (212, 186), (347, 295), (347, 144)],
@@ -263,7 +263,7 @@ def loadPuzzle(app):
         app.pieces = [piece0,piece1, piece2, piece3, piece4 ]
         
     if app.currentPuzzleIndex == 1:
-        base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzle1'
+        base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/puzzle1'
         app.answer = f'{base}/5.png'
         piece0 = PuzzlePiece(1, 0,
             [(345, 95), (147, 168), (145, 315), (216, 338), (345, 218)],
@@ -289,7 +289,7 @@ def loadPuzzle(app):
         app.pieces = [piece0,piece1, piece2, piece3, piece4]
         
 def loadZombie(app):
-    base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/zombie'
+    base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/zombie'
     app.zombie = {
         'normal' : {
             'r' : 10,
@@ -334,28 +334,33 @@ def loadZombie(app):
     }
     app.zombieList = list(app.zombie.keys())
     
+def pauseSound(sound):
+    # Desktop CMU Graphics cannot pause a sound before its first playback.
+    if sound.channel is not None:
+        sound.pause()
+
 def loadMusic(app):
-    app.startMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/music/startPage.mp3')
-    app.bounsSelectionMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/music/bonusSelection.mp3')
-    app.playMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/music/play.mp3')
-    app.gameMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/music/game.mp3')
-    app.instructionMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/music/instruction.mp3')
+    app.startMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/music/startPage.mp3')
+    app.bounsSelectionMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/music/bonusSelection.mp3')
+    app.playMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/music/play.mp3')
+    app.gameMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/music/game.mp3')
+    app.instructionMusic = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/music/instruction.mp3')
 
 def loadSoundEffect(app):
-    app.click = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/click.wav')
-    app.slide = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/slide.flac')
-    app.levelUp = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/levelUp.wav')
-    app.gunShot = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/gun.wav')
-    app.zombieGroan = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/zombie.wav')
-    app.zombieHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/zombieHit.wav')
-    app.wallHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect//wallHit.wav')
-    app.iceHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/iceHit.wav')
-    app.iceCrack = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/ceCrack.wav')
-    app.iceBreak = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/iceBreak.wav')
-    app.boxHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/boxHit.wav')
-    app.boxCrack = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/boxCrack.wav')
-    app.boxBreak = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/boxBreak.wav')
-    app.explode = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/soundeffect/explode.wav')
+    app.click = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/click.wav')
+    app.slide = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/slide.flac')
+    app.levelUp = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/levelUp.wav')
+    app.gunShot = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/gun.wav')
+    app.zombieGroan = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/zombie.wav')
+    app.zombieHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/zombieHit.wav')
+    app.wallHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/wallHit.wav')
+    app.iceHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/iceHit.wav')
+    app.iceCrack = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/iceCrack.wav')
+    app.iceBreak = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/iceBreak.wav')
+    app.boxHit = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/boxHit.wav')
+    app.boxCrack = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/boxCrack.wav')
+    app.boxBreak = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/boxBreak.wav')
+    app.explode = Sound('https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/soundeffect/explode.wav')
     
 def buttonClick(app):
     if app.soundEffect:
@@ -363,7 +368,7 @@ def buttonClick(app):
         
 def screenSlide(app):
     if app.soundEffect:
-        app.startMusic.pause()
+        pauseSound(app.startMusic)
         app.slide.play(restart = True)
 
 def repositArrow(arrow, dx, dy):
@@ -416,26 +421,26 @@ def drawRoundLine(start, end, height, r, fill, opacity):
 ###############################################################
 
 def start_onScreenActivate(app):
-    app.title = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/title.png'
-    app.startButton = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/startButton.png'
-    startImage = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/1.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/3.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/4.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/5.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/6.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/7.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/8.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/9.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/10.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/11.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/12.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/13.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/14.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/15.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/16.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/17.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/18.jpg',
-                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/start/19.jpg']
+    app.title = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/title.png'
+    app.startButton = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/startButton.png'
+    startImage = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/1.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/3.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/4.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/5.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/6.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/7.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/8.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/9.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/10.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/11.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/12.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/13.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/14.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/15.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/16.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/17.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/18.jpg',
+                    'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/start/19.jpg']
     app.startURL = startImage + list(reversed(startImage))[1:-1]
     app.startIndex = 0
     app.stepsPerSecond = 10
@@ -454,20 +459,20 @@ def start_onScreenActivate(app):
     app.lowerx, app.lowery, app.lowerW, app.lowerHeight = 0, 620, 400, 330
     app.moveScreen = False
     
-    app.settingPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/setting.png'
-    app.bookPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/book.png'
-    app.puzzlePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzle.png'
-    app.shopPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/shop1.png'
-    app.filePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/file.png'
+    app.settingPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/setting.png'
+    app.bookPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/book.png'
+    app.puzzlePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/puzzle.png'
+    app.shopPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/shop1.png'
+    app.filePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/file.png'
     
     start_playMusic(app)
     
 def start_playMusic(app):
     if app.music:
         app.startMusic.play(loop = True)
-        app.bounsSelectionMusic.pause()
-        app.playMusic.pause()
-        app.gameMusic.pause()
+        pauseSound(app.bounsSelectionMusic)
+        pauseSound(app.playMusic)
+        pauseSound(app.gameMusic)
 
 def start_redrawAll(app):
     startOriginWidth, startOriginHeight = getImageSize(app.startURL[1])
@@ -600,11 +605,11 @@ def start_onKeyPress(app, key):
 ###############################################################  
 
 def setting_onScreenActivate(app):
-    app.resetPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/reset.png'
-    app.resetPopPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/resetPop.png'
-    app.settingBG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/settingBG.png'
-    app.onPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/on.png'
-    app.offPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/off.png'
+    app.resetPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/reset.png'
+    app.resetPopPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/resetPop.png'
+    app.settingBG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/settingBG.png'
+    app.onPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/on.png'
+    app.offPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/off.png'
     app.pop = False
     start_playMusic(app)
     
@@ -665,7 +670,7 @@ def setting_onMousePress(app, mouseX, mouseY):
             app.music = not app.music
             if not app.music:
                 buttonClick(app)
-                app.startMusic.pause()
+                pauseSound(app.startMusic)
             if app.music:
                 app.startMusic.play()
         if 290 <= mouseX <= 350 and 195 <= mouseY <= 225:
@@ -684,7 +689,7 @@ def setting_onMousePress(app, mouseX, mouseY):
 
 def file_onScreenActivate(app):
     app.filePage = 0
-    app.lockPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/lock1.png'
+    app.lockPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/lock1.png'
     start_playMusic(app)
 
 def file_redrawAll(app):
@@ -781,7 +786,7 @@ def puzzle_onScreenActivate(app):
     app.snapDistance = 20
     app.win = False
     app.gemAwardForPuzzle = 50
-    app.backPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/back.png'
+    app.backPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/back.png'
     start_playMusic(app)
 
 def puzzle_redrawAll(app):
@@ -914,7 +919,7 @@ def puzzle_checkFinish(app):
 ###############################################################  
 
 def book_onScreenActivate(app):
-    app.startPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/startPNG.png'
+    app.startPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/startPNG.png'
     start_playMusic(app)
     
 def book_redrawAll(app):
@@ -1005,22 +1010,22 @@ def game_onScreenActivate(app):
     app.stepsPerSecond = 10
     app.startTiming = False
     app.tooLong = False
-    app.winPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/winPNG.png'
-    app.losePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/losePNG.png'
-    app.winWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/winWord.png'
-    app.loseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/loseWord.png'
-    app.replayPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/replay.png'
-    app.retryPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/retry.png'
-    app.exitButton = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/exitButton.png'
-    app.trap = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/trap.png'
+    app.winPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/winPNG.png'
+    app.losePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/losePNG.png'
+    app.winWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/winWord.png'
+    app.loseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/loseWord.png'
+    app.replayPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/replay.png'
+    app.retryPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/retry.png'
+    app.exitButton = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/exitButton.png'
+    app.trap = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/trap.png'
     game_playMusic(app)
     
 def game_playMusic(app):
     if app.music:
         app.gameMusic.play(restart = True, loop = True)
-        app.bounsSelectionMusic.pause()
-        app.playMusic.pause()
-        app.startMusic.pause()
+        pauseSound(app.bounsSelectionMusic)
+        pauseSound(app.playMusic)
+        pauseSound(app.startMusic)
     
 def game_redrawAll(app):
     drawRect(0, 0, 400, 620, fill = 'darkSlateGray')
@@ -1261,7 +1266,7 @@ def shop_onScreenActivate(app):
     app.warningMessageTimer = 0
     app.stepsPerSecond = 30
     app.step =0
-    app.shopURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/shop1'
+    app.shopURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/shop1'
     start_playMusic(app)
 
 def shop_redrawAll(app):
@@ -1495,14 +1500,14 @@ def instruction_onScreenActivate(app):
     app.step = 0
     app.stepsPerSecond = 30
     app.instructionPage = 0
-    s1URL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/story1'
+    s1URL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/story1'
     app.s1 = [f'{s1URL}/{i}.png' for i in range(1, 6)]
-    s2URL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/story2'
+    s2URL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/story2'
     app.s2 = [f'{s2URL}/{i}.png' for i in range(1, 6)]
-    base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/instruction1'
+    base = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/instruction1'
     app.pageURL = [f'{base}/{i}.png' for i in range(1, 5)]
     if app.music:
-        app.startMusic.pause()
+        pauseSound(app.startMusic)
         app.instructionMusic.play(restart = True, loop = True)
 
 def instruction_redrawAll(app):
@@ -1584,7 +1589,7 @@ def instruction_onMousePress(app, mouseX, mouseY):
     if app.instructionPage > 0 and mouseX <=35 and 20 <= mouseY <= 60:
         buttonClick(app)
         if app.music:
-            app.instructionMusic.pause()
+            pauseSound(app.instructionMusic)
             app.startMusic.play()
         setActiveScreen('start')
     if (0 < app.instructionPage < 4 and 
@@ -1602,17 +1607,17 @@ def bonusSelection_onScreenActivate(app):
     app.stepsPerSecond = 10
     app.countDown = 10
     app.step = 0
-    app.fortifyBase = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/fortifyBase.png'
-    app.reinforcement = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/reinforcement.png'
-    app.weaponUpgrade = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/weaponUpgrade.png'
+    app.fortifyBase = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/fortifyBase.png'
+    app.reinforcement = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/reinforcement.png'
+    app.weaponUpgrade = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/weaponUpgrade.png'
     bonusSelection_playMusic(app)
     
 def bonusSelection_playMusic(app):
     if app.music:
-        app.gameMusic.pause()
+        pauseSound(app.gameMusic)
         app.bounsSelectionMusic.play(restart = True)
-        app.playMusic.pause()
-        app.startMusic.pause()
+        pauseSound(app.playMusic)
+        pauseSound(app.startMusic)
     
 def bonusSelection_redrawAll(app):
     drawRect(0, 0, app.width, app.height, fill = 'darkSlateGray')
@@ -1752,10 +1757,10 @@ def play_onScreenActivate(app):
     
 def play_playMusic(app):
     if app.music:
-        app.gameMusic.pause()
-        app.bounsSelectionMusic.pause()
+        pauseSound(app.gameMusic)
+        pauseSound(app.bounsSelectionMusic)
         app.playMusic.play(restart = True, loop = True)
-        app.startMusic.pause()
+        pauseSound(app.startMusic)
     
 def play_initGameOver(app):
     app.gameOverTimer = None
@@ -1864,41 +1869,41 @@ class Enemy:
         return w, h
 
 def play_loadImage(app):
-    app.playBackground = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/playBackground.png'
-    app.soliderpng = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/solider.png'
-    app.enemyBody = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/enemyBody.png'
-    app.sandWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/sandWall.png'
-    app.brokenWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/brokenWall.png'
-    app.verticalWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/verticalWall.png'
-    app.coin = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/coin.png'
-    app.pausePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/pause.png'
-    app.notPausePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/notPause.png'
-    app.bombPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/bombPNG.png'
-    skillURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/skill'
+    app.playBackground = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/playBackground.png'
+    app.soliderpng = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/solider.png'
+    app.enemyBody = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/enemyBody.png'
+    app.sandWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/sandWall.png'
+    app.brokenWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/brokenWall.png'
+    app.verticalWall = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/verticalWall.png'
+    app.coin = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/coin.png'
+    app.pausePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/pause.png'
+    app.notPausePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/notPause.png'
+    app.bombPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bombPNG.png'
+    skillURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/skill'
     app.skillPNG = [f'{skillURL}/{app.skillList[i]}.png' for i in range(4)]
-    iceURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/ice'
+    iceURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/ice'
     app.icePNG = [f'{iceURL}/ice{i}.png' for i in range(1, 7)]
-    boxURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/box'
+    boxURL = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/box'
     app.boxPNG = [f'{boxURL}/{i}.png' for i in range(1, 5)]
-    app.iceSoliderPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/iceSolider.png'
-    app.gunPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/gun.png'
-    coinsBase = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/coins'
+    app.iceSoliderPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/iceSolider.png'
+    app.gunPNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/gun.png'
+    coinsBase = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/coins'
     app.coinsPNG = [f'{coinsBase}/{i}.png' for i in range(3, 11)]
-    app.pauseScreen = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/pauseScreen.png'
-    app.pauseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/pauseWord.png'
-    app.pauseContinue = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/pauseContinue.png'
-    app.pauseRestart = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/pauseRestart.png'
-    app.gameoverScreen = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/gameoverScreen2.png'
-    app.gameoverWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/gameoverWord1.png'
-    app.revivePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/revive.png'
-    app.puzzleIcon = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/master/puzzleIcon1.png'
-    app.bulletType = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/1.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/2.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/3.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/4.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/5.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/6.png',
-                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/bullet/7.png']
+    app.pauseScreen = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/pauseScreen.png'
+    app.pauseWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/pauseWord.png'
+    app.pauseContinue = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/pauseContinue.png'
+    app.pauseRestart = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/pauseRestart.png'
+    app.gameoverScreen = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/gameoverScreen2.png'
+    app.gameoverWord = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/gameoverWord1.png'
+    app.revivePNG = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/revive.png'
+    app.puzzleIcon = 'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/puzzleIcon1.png'
+    app.bulletType = ['https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/1.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/2.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/3.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/4.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/5.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/6.png',
+                      'https://raw.githubusercontent.com/T-ya777/112FinalProjectSource/main/bullet/7.png']
 
 def play_redrawAll(app):
     playBGWidth, playBGHeight = getImageSize(app.playBackground)
